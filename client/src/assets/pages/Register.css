@@ -1,0 +1,27 @@
+.LoginForm {
+	height: 560px;
+}
+
+.SignUpString {
+	font-size: 48px;
+	color: var(--MAIN-COLOR);
+	line-height: 40px;
+	margin-top: 20px;
+	margin-bottom: 25px;
+}
+
+.ChangeToSignInString {
+	color: var(--DARK-GREY);
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.SignInLink {
+	all: unset;
+	cursor: pointer;
+	color: var(--MAIN-COLOR);
+}
+
+.EmailLogoImg {
+	transform: translate(2px);
+}

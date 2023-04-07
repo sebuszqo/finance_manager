@@ -1,24 +1,32 @@
-import express, { json } from "express";
+import express from "express";
 import cors from "cors";
 import "express-async-errors";
-import { handleError, ValidationError } from "./middleware/error";
+import { connectDB } from "./database/connections/mainDatabase";
+import { UserModel } from "./database/models/users";
+import bodyParser from "body-parser";
+import { log } from "console";
 
 const app = express();
-
 app.use(
-    cors({
-        origin: "http://localhost:3000",
-    })
+	cors({
+		origin: "http://localhost:3000",
+	})
 );
+app.use(bodyParser.json());
+connectDB();
 
-app.use(json());
+app.post("/api/register", async (req, res) => {
+	try {
+		const newUser = new UserModel(req.body);
+		console.log(newUser);
+		await newUser.save();
+		res.status(201).json({ message: "User registered succefully" });
+	} catch (err) {
+		res.status(500).json({ err: err.message });
+	}
+});
 
-// app.get("/", async (req, res) => {
-//   throw new ValidationError("Sorry");
-// });
-
-app.use(handleError);
-
-app.listen(3001, "0.0.0.0", () => {
-    console.log("Listening on http://localhost:3001");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+	console.log("Listening on http://localhost:5000");
 });

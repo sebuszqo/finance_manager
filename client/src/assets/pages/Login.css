@@ -1,0 +1,133 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	/* Colors */
+	--BG-COLOR: hsl(223, 34%, 12%);
+	--INNER-BG-COLOR: hsl(218, 33%, 16%);
+	--DARK-GREY: hsl(0, 0%, 53%);
+	--MAIN-COLOR: hsl(182, 100%, 36%);
+	--WHITE: hsl(0, 0%, 100%);
+
+	/* Sizes, margins, paddings */
+	--LOGIN-FORM-SIZE-W: 480px;
+	--LOGIN-FORM-SIZE-H: 460px;
+	--LOGIN-FORM-PADD: 25px 40px;
+
+	/* Borders */
+	--BASIC-BORDER-RADIUS: 10px;
+}
+
+body {
+	background: var(--BG-COLOR);
+	font-family: Noto Serif Kannada;
+	font-size: 16px;
+	min-height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.LoginForm {
+	background-color: var(--INNER-BG-COLOR);
+	border-radius: var(--BASIC-BORDER-RADIUS);
+	width: var(--LOGIN-FORM-SIZE-W);
+	height: var(--LOGIN-FORM-SIZE-H);
+	padding: var(--LOGIN-FORM-PADD);
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.WelcomeString {
+	font-size: 48px;
+	color: var(--MAIN-COLOR);
+	line-height: 40px;
+	margin-top: 20px;
+}
+
+.SignInString {
+	font-size: 24px;
+	color: var(--WHITE);
+	line-height: 20px;
+	margin-bottom: 30px;
+}
+
+.LoginFormData {
+	width: 100%;
+}
+
+.LoginFormData input {
+	font-size: inherit;
+	width: 94%;
+	color: var(--WHITE);
+	height: 30px;
+	background-color: var(--INNER-BG-COLOR);
+	border: none;
+	outline: none;
+}
+
+.UsernameLogoImg {
+	transform: translate(3px, 3px);
+}
+
+.PasswordLogoImg {
+	transform: translate(5px, 3px);
+}
+
+hr {
+	border: 1px solid var(--DARK-GREY);
+}
+
+.FirstHrLine {
+	margin-bottom: 25px;
+}
+
+.ElementsUnderPassword {
+	display: flex;
+	justify-content: space-between;
+}
+
+.ElementsUnderPassword > label {
+	color: var(--WHITE);
+	font-size: 14px;
+}
+
+input[type="checkbox"] {
+	width: 13px;
+	height: 13px;
+	border: 1px solid var(--INNER-BG-COLOR);
+	cursor: pointer;
+	vertical-align: middle;
+	margin-right: 7px;
+}
+
+input[type="checkbox"]:checked {
+	accent-color: var(--MAIN-COLOR);
+}
+
+.ElementsUnderPassword > h4 {
+	color: var(--DARK-GREY);
+	font-weight: normal;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.LoginButton {
+	width: 100%;
+	height: 70px;
+	border: none;
+	outline: none;
+	background-color: var(--MAIN-COLOR);
+	border-radius: var(--BASIC-BORDER-RADIUS);
+	margin-top: 40px;
+	color: var(--WHITE);
+	font-weight: 700;
+	font-size: 28px;
+	cursor: pointer;
+}
